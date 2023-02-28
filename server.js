@@ -13,8 +13,8 @@ const init = async () => {
     // await User.sync();
 
     // 2. call `.sync()` on the entire Sequelize instance (e.g. `db`) since our models are defined on it (i.e. `db.define(...)`)
-    // await db.sync({ force: true });
-    await db.sync({});
+    await db.sync({ force: true });
+    // await db.sync({});
 
     app.listen(PORT, () => {
       console.log(`Listening at http://localhost:${PORT}`);
