@@ -16,12 +16,17 @@ app.use("/wiki", require("./routes/wiki")); //if '/wiki, go to ./routes/wiki to 
 
 app.use("/users", require("./routes/users"));
 
-app.get("/", function (req, res) {
+app.get("/", (req, res) => {
   res.redirect("/wiki/");
 });
 
 app.use((req, res, next) => {
   res.status(404).send(notFoundPage());
+});
+
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send(errorPage(err));
 });
 
 module.exports = app;
