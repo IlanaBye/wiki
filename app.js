@@ -14,6 +14,8 @@ app.use(express.json());
 app.use("/wiki", require("./routes/wiki")); //if '/wiki, go to ./routes/wiki to check that file - if the method and route match, do the thing
 // app.use("/users", require("./routes/users"));
 
+app.use("/users", require("./routes/users"));
+
 app.get("/", function (req, res) {
   res.redirect("/wiki/");
 });

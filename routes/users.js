@@ -17,15 +17,15 @@ router.get("/:userId", async (req, res, next) => {
     const user = await User.findByPk(req.params.userId);
     const pages = await Page.findAll({
       where: {
-        authorId: req.params.userId,
+        userId: req.params.userId,
       },
     });
 
-    // if (!user) {
-    //   res.status(404).send(notFoundPage());
-    // } else {
-    res.send(userPages(user, pages));
-    // }
+    if (!user) {
+      res.status(404).send(notFoundPage());
+    } else {
+      res.send(userPages(user, pages));
+    }
   } catch (error) {
     next(error);
   }
