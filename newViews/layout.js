@@ -8,7 +8,7 @@ module.exports = (content) => html`<!DOCTYPE html>
         href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
         rel="stylesheet"
       />
-      <link href="/stylesheets/style.css" rel="stylesheet" />
+      <link rel="stylesheet" href="/stylesheets/style.css" type="text/css" />
     </head>
     <body>
       <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">

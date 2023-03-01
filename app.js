@@ -3,10 +3,9 @@ const app = express();
 const morgan = require("morgan");
 const path = require("path");
 const { notFoundPage, errorPage } = require("./newViews");
-// const wikiRouter = require('./routes/wiki');
-// const userRouter = require('./routes/users');
 
 app.use(morgan("dev")); //logging middleware
+// app.use(require("method-override")("_method"));
 app.use(express.static(path.join(__dirname, "./public"))); //serving up static files (e.g. css files)
 app.use(express.urlencoded({ extended: false })); //parsing middleware for form input data
 app.use(express.json());

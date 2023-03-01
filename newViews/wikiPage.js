@@ -8,7 +8,6 @@ module.exports = (page, user) =>
       ${page.title}
       <small> (<a href="/wiki/${page.slug}/similar">Similar</a>)</small>
     </h3>
-    <h3>${page.title}</h3>
     <h4>by <a href="/users/${user.id}">${user.name}</a></h4>
     <hr />
     <div class="page-body">$${marked(page.content)}</div>
