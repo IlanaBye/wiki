@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { Page, User } = require("../models");
-const { userList, userPages } = require("../views");
+const { userList, userPages } = require("../views-submodule");
 
 router.get("/", async (req, res, next) => {
   try {

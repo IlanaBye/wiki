@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { addPage, wikiPage, main, notFoundPage } = require("../views");
+const { addPage, wikiPage, main, notFoundPage } = require("../views-submodule");
 const { User, Page } = require("../models");
 
 router.get("/", async (req, res, next) => {
