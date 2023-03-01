@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { addPage, wikiPage, main } = require("../views");
+const { addPage, wikiPage, main, notFoundPage } = require("../views");
 const { User, Page } = require("../models");
 
 router.get("/", async (req, res, next) => {
@@ -43,8 +43,13 @@ router.get("/:slug", async (req, res, next) => {
         slug: req.params.slug,
       },
     });
-    const user = await page.getUser();
-    res.send(wikiPage(page, user));
+
+    if (page === null) {
+      res.status(404).send(notFoundPage());
+    } else {
+      const user = await page.getUser();
+      res.send(wikiPage(page, user));
+    }
   } catch (error) {
     next(error);
   }
