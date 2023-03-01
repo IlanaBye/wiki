@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 const path = require("path");
-const { notFoundPage } = require("./views-submodule");
+const { notFoundPage, errorPage } = require("./newViews");
 // const wikiRouter = require('./routes/wiki');
 // const userRouter = require('./routes/users');
 
